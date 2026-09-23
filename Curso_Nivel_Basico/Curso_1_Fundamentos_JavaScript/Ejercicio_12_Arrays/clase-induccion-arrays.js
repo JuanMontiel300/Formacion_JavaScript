@@ -62,3 +62,16 @@ console.log(newfrutas)
 const isArray = Array.isArray(fruta)
 
 console.log(isArray)
+
+// Practical exercise sum all elements of an array 
+
+
+const numberArrray = [1, 2, 3, 4, 5]
+let sum = 0
+
+for (let i = 0; i < numberArrray.length; i++) {
+
+    sum += number[i]
+}
+
+console.log(sum)
