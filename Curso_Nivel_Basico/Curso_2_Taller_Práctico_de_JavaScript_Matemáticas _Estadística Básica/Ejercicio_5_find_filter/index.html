@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metodo con Find vs Filter</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            background: linear-gradient(to right, #d9ee1a 30%, #31dfeb 60%);
+            color: #111;
+        }
+        
+        .container {
+            margin: 0 auto;
+            width: min(90%, 420px);
+            height: 100vh;
+            text-align: center;
+            display: grid;
+            place-content: center;
+            justify-content: center;
+        }
+        
+        .container-item {
+            place-content: center;
+            width: 100%;
+        }
+        
+        label {
+            display: inline-block;
+            width: 150px;
+        }
+        
+        input,
+        button {
+            margin-top: 15px;
+        }
+        
+        input {
+            width: 190px;
+        }
+        
+        button {
+            box-shadow: 5px 5px 10px black;
+            height: 30px;
+            width: 120px;
+            cursor: pointer;
+            border: none;
+            background: #31eb3e;
+            border-radius: 20px;
+        }
+        
+        button:focus {
+            transition: 1s ease;
+            transform: scale(1.1);
+            background: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container ">
+        <h1>Descuento por cupón</h1>
+        <div class="container-item">
+            <label for="precio">Precio</label>
+            <input type="number" id="precio">
+            <label for="cupon">Ingrese Cupon</label>
+            <input type="text" id="cupon">
+            <button id="boton">Haz click</button>
+            <p id="respuesta">Descuento:</p>
+        </div>
+    </div>
+    <script src="./metodo.js"></script>
+</body>
+
+</html>

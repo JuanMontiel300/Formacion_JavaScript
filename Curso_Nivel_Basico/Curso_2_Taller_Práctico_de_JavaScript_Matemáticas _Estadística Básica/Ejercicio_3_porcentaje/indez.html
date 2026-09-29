@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .body {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            display: grid;
+            margin: 20px;
+            padding: 20px;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .container-section {
+            display: grid;
+            width: 200px;
+            margin: 0 auto;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+        
+        .container-section>button {
+            height: 40px;
+            text-decoration: none;
+            border: none;
+            border-radius: 20px;
+            background-color: aqua
+        }
+        
+        .container-section>label {
+            font-size: 1rem;
+            font-weight: bold;
+            text-align: start;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Calcular Porcentaje</h1>
+        <div class="container-section">
+            <label for="precio">Precio</label>
+            <input id="precio" type="number" min="0" step="0.01" placeholder="Ej: 100">
+
+            <label for="descuento">Descuento %</label>
+            <input id="descuento" type="number" min="0" max="100" step="0.01" placeholder="Ej: 20">
+
+            <button id="calcularBtn" type="button">Calcular descuento</button>
+            <p id="resultado">Resultado:</p>
+        </div>
+    </div>
+    <script src="./porcentaje.js"></script>
+</body>
+
+</html>
