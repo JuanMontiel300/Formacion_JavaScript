@@ -4,6 +4,7 @@ const botonArriba = document.querySelector('#btnArriba')
 const botonIzquierda = document.querySelector('#btnIzquierda')
 const botonDerecha = document.querySelector('#btnDerecha')
 const botonAbajo = document.querySelector('#btnAbajo')
+const botonRestart = document.querySelector('#btnRestart')
 const live = document.querySelector('#lives')
 const timeSpan = document.querySelector('#time')
 const newTime = document.querySelector('#record')
@@ -11,6 +12,7 @@ const resultTime = document.querySelector('#result')
 
 window.addEventListener('load', startGame)
 window.addEventListener('resize', handleResize)
+botonRestart.addEventListener('click', restartGame)
 
 let canvasSize
 let elmentosSize
@@ -138,9 +140,16 @@ function movePlayer() {
     game.fillText(emojis['PLAYER'], playerPosition.x, playerPosition.y)
 }
 
+function stopTimer() {
+    if (timeInterval) {
+        clearInterval(timeInterval)
+        timeInterval = undefined
+    }
+}
+
 function gameWin() {
     console.log("Terminaste el Juego ")
-    clearInterval(timeInterval)
+    stopTimer()
 
     const recordTime = localStorage.getItem('Record_time')
     const playerTime = Date.now() - timeStart
@@ -173,6 +182,7 @@ function time() {
 function lost() {
     lives -= 1
     if (lives <= 0) {
+        stopTimer()
         lives = 3
         level = 0
         timeStart = undefined
@@ -192,10 +202,31 @@ function jugadorLives() {
 }
 
 function levelWin() {
-    console.log("sube de nivel")
-    level++
-    startGame()
+    console.log('sube de nivel')
 
+    if (level < maps.length - 1) {
+        level++
+        playerPosition.x = undefined
+        playerPosition.y = undefined
+        giftPosition.x = undefined
+        giftPosition.y = undefined
+        startGame()
+    } else {
+        gameWin()
+    }
+}
+
+function restartGame() {
+    stopTimer()
+    level = 0
+    lives = 3
+    timeStart = undefined
+    resultTime.innerHTML = ''
+    playerPosition.x = undefined
+    playerPosition.y = undefined
+    giftPosition.x = undefined
+    giftPosition.y = undefined
+    startGame()
 }
 window.addEventListener('keydown', moveByKeys)
 botonArriba.addEventListener('click', moveUp)
