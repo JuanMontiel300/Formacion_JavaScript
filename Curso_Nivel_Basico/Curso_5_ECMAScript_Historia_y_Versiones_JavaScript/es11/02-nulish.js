@@ -1,5 +1,5 @@
-const anothernumber = null
+/*const anothernumber = null
 
 const validate = anothernumber ? ? 5
 
-console.log(validate)
+console.log(validate)*/

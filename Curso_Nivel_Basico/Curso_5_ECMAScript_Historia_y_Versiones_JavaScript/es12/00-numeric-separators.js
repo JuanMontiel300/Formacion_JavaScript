@@ -1,3 +1,3 @@
-const value = 100 _000_000_000;
+/*const value = 100 _000_000_000;
 
-console.log(value)
+console.log(value)*/
