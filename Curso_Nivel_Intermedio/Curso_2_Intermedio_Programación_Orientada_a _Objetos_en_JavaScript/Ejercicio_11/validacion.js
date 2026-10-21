@@ -19,15 +19,17 @@ function Students({
     }
     this.approvedCourse = approvedCourse
 
+
     if (isArray(learningPaths)) {
-        this.learningPaths = []
+        this._learningPaths = []
         for (learningPathZ in learningPaths) {
             if (learningPaths[learningPathZ] instanceof Learning) {
-                this.learningPaths.push(learningPaths[learningPathZ])
+                this._learningPaths.push(learningPaths[learningPathZ])
             }
         }
     }
 }
+
 
 
 

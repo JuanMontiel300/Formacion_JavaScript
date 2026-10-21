@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Current Time 5:03 / Duration 9:35 Mute Fullscreen 1.25X Regresa 15 segundos Pause Adelanta 15 segundos Recorrido de Arrays con Foreach en JavaScript</title>
+</head>
+
+<body>
+    <div id="app"></div>
+    <br>
+    <div class="container">
+        <h2>Tareas</h2>
+        <label for="">Matematicas</label>
+        <input class="tarea" type="checkbox">
+        <label for="">Espanol</label>
+        <input class="tarea" type="checkbox">
+        <label for="">ingles</label>
+        <input class="tarea" type="checkbox">
+        <p id="respuesta"></p>
+    </div>
+    <script>
+        const products = [{
+            title: 'Burger',
+            precio: 120
+        }, {
+            title: 'Pizza',
+            precio: 90
+        }, ]
+
+        const app = document.getElementById('app')
+        products.forEach(product => {
+            app.innerHTML += `<li>${product.title} - $${product.precio}</li>`
+        })
+
+        //recto
+
+        const tarea = [{
+            name: 'Matematicas',
+
+        }, {
+            name: 'Espanol',
+
+        }, {
+            name: 'ingles'
+        }]
+
+        const tareasCompleta = document.querySelectorAll('.tarea')
+        const respuesta = document.getElementById('respuesta')
+        tareasCompleta.forEach((checkbox, indice) => {
+            checkbox.addEventListener('change', () => {
+                if (checkbox.checked) {
+                    respuesta.textContent = `Completaste la tarea de: ${tarea[indice].name}`
+                } else {
+                    respuesta.textContent = `La tarea de ${tarea[indice].name} no está completada.`
+                }
+            })
+        })
+    </script>
+</body>
+
+</html>
