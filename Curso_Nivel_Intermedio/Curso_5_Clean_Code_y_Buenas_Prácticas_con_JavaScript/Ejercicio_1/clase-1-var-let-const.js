@@ -46,3 +46,5 @@ console.log("Valor cambaido", age)
 const pi = 3.1416
 
 pi = 3.1315
+
+console.log(pi)
