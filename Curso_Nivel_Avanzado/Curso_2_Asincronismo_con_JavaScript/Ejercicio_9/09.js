@@ -59,7 +59,7 @@ async function obtenerProducto(id) {
     }
 }
 
-obtenerProducto(3);
+obtenerProducto(1);
 
 // Múltiples try/catch: cuándo separarlos
 
