@@ -24,13 +24,21 @@
         </article>
         <button id="fetch-button">Cargar nuevos gatitos</button>
     </section>
-    <section id="favoriteMichis ">
+    <section id="uploadMichis">
+        <h2>Subir gatitos</h2>
+        <form id="uploadForm" enctype="multipart/form-data">
+            <input type="file" name="file" alt="Subir gatito">
+            <button type="button" onclick="uploadMichi()">Subir gatito</button>
+        </form>
+    </section>
+    <section id="favoriteMichis">
         <h2>Gatitos favoritos</h2>
         <article>
-            <img width="300" id="image1-url" src="" alt="Imagen de gatito aleatorio">
-            <button id="favorite-button">sacar al michi      favoritos</button>
+            <img width="200" id="image1-url" src="" alt="Imagen de gatito aleatorio">
+            <button id="favoritebutton1">sacar al michi favoritos</button>
         </article>
     </section>
+
 
 
     <script src="./mian.js"></script>
