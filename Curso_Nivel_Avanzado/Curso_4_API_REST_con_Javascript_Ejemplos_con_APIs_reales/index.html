@@ -6,12 +6,197 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Movies</title>
     <link rel="stylesheet" href="./styles/app.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <h1>Movies</h1>
-    <script src="./src/secrets.js"></script>
-    <script src="./src/main.js"></script>
+    <div class="app">
+
+        <!-- Header -->
+        <header class="header">
+            <a href="#" class="logo">
+                <span class="logo-icon">▶</span>
+                <span>Luma</span>
+            </a>
+
+            <button class="notification-button" aria-label="Notificaciones">
+                ♧
+            </button>
+        </header>
+
+        <main class="main">
+
+            <!-- Welcome -->
+            <section class="welcome">
+                <p class="greeting">Buenas noches, Alex</p>
+                <h1>¿Qué quieres ver hoy?</h1>
+            </section>
+
+            <!-- Search -->
+            <section class="search-section">
+                <div class="search-box">
+                    <span class="search-icon">⌕</span>
+                    <input type="search" placeholder="Busca películas, actores..." aria-label="Buscar películas o actores">
+                </div>
+
+                <button class="filter-button" aria-label="Filtros">
+                    ☷
+                </button>
+            </section>
+
+            <!-- Featured Movie -->
+            <section class="featured-section">
+
+                <article class="featured-card">
+
+                    <div class="featured-content">
+                        <span class="featured-label">
+                            ESTRENO DESTACADO
+                        </span>
+
+                        <h2>Más allá<br>del silencio</h2>
+
+                        <div class="movie-meta">
+                            <span>2024</span>
+                            <span>•</span>
+                            <span>Ciencia ficción</span>
+                            <span>•</span>
+                            <span class="rating">★ 8.9</span>
+                        </div>
+
+                        <div class="featured-actions">
+                            <button class="button-primary">
+                                ▶ Ver ahora
+                            </button>
+
+                            <button class="button-secondary">
+                                + Mi lista
+                            </button>
+                        </div>
+                    </div>
+
+                </article>
+
+            </section>
+
+            <!-- Popular Movies -->
+            <section class="movie-section">
+
+                <div class="section-header">
+                    <h2>Populares ahora</h2>
+                    <a href="#">Ver todo ›</a>
+                </div>
+
+                <div class="movie-list">
+
+                    <article class="movie-card">
+                        <div class="movie-poster poster-one">
+                            <button class="favorite-button" aria-label="Agregar a favoritos">♡</button>
+                            <span class="poster-rating">★ 8.7</span>
+                        </div>
+
+                        <h3>El último horizonte</h3>
+                        <p>2024 · Película</p>
+                    </article>
+
+                    <article class="movie-card">
+                        <div class="movie-poster poster-two">
+                            <button class="favorite-button" aria-label="Agregar a favoritos">♡</button>
+                            <span class="poster-rating">★ 8.4</span>
+                        </div>
+
+                        <h3>Noches de neón</h3>
+                        <p>2023 · Película</p>
+                    </article>
+
+                    <article class="movie-card">
+                        <div class="movie-poster poster-three">
+                            <button class="favorite-button" aria-label="Agregar a favoritos">♡</button>
+                            <span class="poster-rating">★ 8.1</span>
+                        </div>
+
+                        <h3>Bajo el océano</h3>
+                        <p>2024 · Película</p>
+                    </article>
+
+                </div>
+
+            </section>
+
+            <!-- Recommendations -->
+            <section class="recommendations-section">
+
+                <div class="section-header">
+                    <h2>Recomendadas para ti</h2>
+                    <a href="#">Ver todo ›</a>
+                </div>
+
+                <div class="recommendation-list">
+
+                    <article class="recommendation-card">
+                        <div class="recommendation-poster recommendation-one">
+                            ▶
+                        </div>
+
+                        <div class="recommendation-info">
+                            <span class="match">98% para ti</span>
+                            <h3>Memoria infinita</h3>
+                            <p>Ciencia ficción · 2h 12m</p>
+                        </div>
+
+                        <button class="recommendation-favorite" aria-label="Agregar a favoritos">♡</button>
+                    </article>
+
+                    <article class="recommendation-card">
+                        <div class="recommendation-poster recommendation-two">
+                            ▶
+                        </div>
+
+                        <div class="recommendation-info">
+                            <span class="match">94% para ti</span>
+                            <h3>La ciudad oculta</h3>
+                            <p>Suspenso · 1h 48m</p>
+                        </div>
+
+                        <button class="recommendation-favorite" aria-label="Agregar a favoritos">♡</button>
+                    </article>
+
+                </div>
+
+            </section>
+
+        </main>
+
+        <!-- Bottom Navigation -->
+        <nav class="bottom-navigation" aria-label="Navegación principal">
+
+            <a href="#" class="nav-item active">
+                <span>◆</span>
+                <small>Inicio</small>
+            </a>
+
+            <a href="#" class="nav-item">
+                <span>⌕</span>
+                <small>Buscar</small>
+            </a>
+
+            <a href="#" class="nav-item">
+                <span>♡</span>
+                <small>Favoritos</small>
+            </a>
+
+            <a href="#" class="nav-item">
+                <span>♙</span>
+                <small>Perfil</small>
+            </a>
+
+        </nav>
+
+    </div>
+
+    <script src="js/main.js"></script>
 
 </body>
 

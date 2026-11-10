@@ -1,24 +1,544 @@
+/* ==============================
+   VARIABLES
+================================= */
+
 :root {
-    /* Colores principales */
     --primary: #7C5CFC;
     --primary-dark: #1B1533;
-    /* Fondos */
     --background: #090A0F;
     --surface: #151720;
     --surface-elevated: #1D202B;
-    /* Textos */
     --text-primary: #F7F7FA;
     --text-secondary: #A5A7B2;
-    /* Detalles */
     --border: #292C38;
     --accent: #FFB547;
     --success: #70D69A;
+    --font-primary: 'Manrope', sans-serif;
+}
+
+
+/* ==============================
+   RESET
+================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-    background-color: var(--background);
+    min-height: 100vh;
+    background: var(--background);
+    color: var(--text-primary);
+    font-family: var(--font-primary);
 }
 
-h1 {
+button,
+input {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/* ==============================
+   APP
+================================= */
+
+.app {
+    width: 100%;
+    max-width: 430px;
+    min-height: 100vh;
+    margin: 0 auto;
+    position: relative;
+    padding-bottom: 90px;
+    border-left: 1px solid var(--border);
+    border-right: 1px solid var(--border);
+}
+
+.main {
+    padding: 0 24px;
+}
+
+
+/* ==============================
+   HEADER
+================================= */
+
+.header {
+    height: 68px;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 19px;
+    font-weight: 800;
+}
+
+.logo-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 11px;
+    display: grid;
+    place-items: center;
+    background: var(--primary);
+    box-shadow: 0 0 20px #7c5cfc55;
+    font-size: 13px;
+}
+
+.notification-button {
+    width: 38px;
+    height: 38px;
+    border: 1px solid var(--border);
+    border-radius: 13px;
+    background: var(--surface);
     color: var(--text-primary);
+    font-size: 21px;
+}
+
+
+/* ==============================
+   WELCOME
+================================= */
+
+.welcome {
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.greeting {
+    color: var(--text-secondary);
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.welcome h1 {
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: -0.8px;
+}
+
+
+/* ==============================
+   SEARCH
+================================= */
+
+.search-section {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.search-box {
+    height: 48px;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0 15px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 15px;
+}
+
+.search-icon {
+    color: var(--text-secondary);
+    font-size: 23px;
+}
+
+.search-box input {
+    width: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: var(--text-primary);
+    font-size: 12px;
+}
+
+.search-box input::placeholder {
+    color: #777B88;
+}
+
+.filter-button {
+    width: 48px;
+    height: 48px;
+    border: 1px solid #38256C;
+    border-radius: 15px;
+    background: var(--primary-dark);
+    color: var(--text-primary);
+    font-size: 22px;
+}
+
+
+/* ==============================
+   FEATURED MOVIE
+================================= */
+
+.featured-section {
+    margin-bottom: 26px;
+}
+
+.featured-card {
+    min-height: 200px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    padding: 17px;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    background: radial-gradient(circle at 72% 35%, #7452E9 0%, #29205D 20%, transparent 43%), linear-gradient(110deg, #11121C 10%, #17132D 65%, #090A0F 100%);
+}
+
+.featured-card::before {
+    content: "";
+    position: absolute;
+    width: 175px;
+    height: 175px;
+    right: 15px;
+    top: 5px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 35%, #A08AFF, #4430A5 55%, #11121C);
+    box-shadow: 0 0 35px #7C5CFC55;
+}
+
+.featured-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient( 0deg, #090A0F 0%, transparent 80%);
+}
+
+.featured-content {
+    position: relative;
+    z-index: 1;
+}
+
+.featured-label {
+    display: inline-block;
+    padding: 5px 8px;
+    border-radius: 6px;
+    background: var(--primary-dark);
+    color: #C3B6FF;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 0.4px;
+    margin-bottom: 10px;
+}
+
+.featured-content h2 {
+    font-size: 23px;
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -0.7px;
+}
+
+.movie-meta {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 8px;
+    color: var(--text-secondary);
+    font-size: 9px;
+}
+
+.rating {
+    color: var(--accent);
+    font-weight: 800;
+}
+
+.featured-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 17px;
+}
+
+.button-primary,
+.button-secondary {
+    height: 36px;
+    padding: 0 15px;
+    border-radius: 11px;
+    font-size: 10px;
+    font-weight: 800;
+}
+
+.button-primary {
+    border: none;
+    background: var(--primary);
+    color: white;
+    box-shadow: 0 4px 15px #7C5CFC55;
+}
+
+.button-secondary {
+    border: 1px solid #41414C;
+    background: #24242D;
+    color: white;
+}
+
+
+/* ==============================
+   SECTION HEADERS
+================================= */
+
+.movie-section,
+.recommendations-section {
+    margin-bottom: 26px;
+}
+
+.section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 13px;
+}
+
+.section-header h2 {
+    font-size: 15px;
+    font-weight: 800;
+    letter-spacing: -0.4px;
+}
+
+.section-header a {
+    color: #A68CFF;
+    font-size: 10px;
+    font-weight: 700;
+}
+
+
+/* ==============================
+   MOVIE CARDS
+================================= */
+
+.movie-list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+}
+
+.movie-card {
+    min-width: 0;
+}
+
+.movie-poster {
+    height: 190px;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    border-radius: 15px;
+    display: flex;
+    align-items: flex-end;
+    padding: 8px;
+}
+
+.poster-one {
+    background: linear-gradient(0deg, #101A1A 0%, transparent 70%), linear-gradient(150deg, #D6C4A6, #839C96 48%, #243E3B);
+}
+
+.poster-two {
+    background: linear-gradient(0deg, #090A18 0%, transparent 70%), linear-gradient(135deg, #17113E, #075A86, #10121D);
+}
+
+.poster-three {
+    background: linear-gradient(0deg, #1B261B 0%, transparent 70%), linear-gradient(140deg, #C4B99C, #657D63, #293E2A);
+}
+
+.favorite-button {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 27px;
+    height: 27px;
+    border: 1px solid #FFFFFF33;
+    border-radius: 9px;
+    background: #090A0F88;
+    color: white;
+    font-size: 19px;
+}
+
+.poster-rating {
+    padding: 4px 6px;
+    border-radius: 6px;
+    background: #090A0FCC;
+    color: var(--accent);
+    font-size: 9px;
+    font-weight: 800;
+}
+
+.movie-card h3 {
+    margin-top: 8px;
+    font-size: 10px;
+    font-weight: 800;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.movie-card p {
+    margin-top: 3px;
+    color: var(--text-secondary);
+    font-size: 9px;
+}
+
+
+/* ==============================
+   RECOMMENDATIONS
+================================= */
+
+.recommendation-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.recommendation-card {
+    min-height: 95px;
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    padding: 8px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+}
+
+.recommendation-poster {
+    width: 82px;
+    height: 75px;
+    flex-shrink: 0;
+    display: grid;
+    place-items: center;
+    border-radius: 11px;
+    color: white;
+    font-size: 20px;
+}
+
+.recommendation-one {
+    background: radial-gradient(circle, #252525, #080808);
+}
+
+.recommendation-two {
+    background: linear-gradient(135deg, #56B4E8, #263D70, #101526);
+}
+
+.recommendation-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.match {
+    color: var(--success);
+    font-size: 9px;
+    font-weight: 800;
+}
+
+.recommendation-info h3 {
+    margin-top: 4px;
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.recommendation-info p {
+    margin-top: 3px;
+    color: var(--text-secondary);
+    font-size: 9px;
+}
+
+.recommendation-favorite {
+    border: none;
+    background: transparent;
+    color: var(--text-secondary);
+    font-size: 22px;
+    padding: 5px;
+}
+
+
+/* ==============================
+   BOTTOM NAVIGATION
+================================= */
+
+.bottom-navigation {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 76px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 5px 12px;
+    background: #0E0F16;
+    border-top: 1px solid var(--border);
+}
+
+.nav-item {
+    min-width: 55px;
+    height: 52px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    color: #777B88;
+}
+
+.nav-item span {
+    font-size: 20px;
+}
+
+.nav-item small {
+    font-size: 9px;
+    font-weight: 600;
+}
+
+.nav-item.active {
+    color: #B9A6FF;
+}
+
+.nav-item.active span {
+    width: 36px;
+    height: 27px;
+    display: grid;
+    place-items: center;
+    background: var(--primary-dark);
+    border-radius: 9px;
+}
+
+
+/* ==============================
+   RESPONSIVE
+================================= */
+
+@media (min-width: 600px) {
+    .app {
+        border: 1px solid var(--border);
+        border-radius: 24px;
+        overflow: hidden;
+    }
+}
+
+@media (max-width: 350px) {
+    .main {
+        padding: 0 15px;
+    }
+    .movie-poster {
+        height: 155px;
+    }
+    .featured-content h2 {
+        font-size: 20px;
+    }
 }
