@@ -1,0 +1,24 @@
+:root {
+    /* Colores principales */
+    --primary: #7C5CFC;
+    --primary-dark: #1B1533;
+    /* Fondos */
+    --background: #090A0F;
+    --surface: #151720;
+    --surface-elevated: #1D202B;
+    /* Textos */
+    --text-primary: #F7F7FA;
+    --text-secondary: #A5A7B2;
+    /* Detalles */
+    --border: #292C38;
+    --accent: #FFB547;
+    --success: #70D69A;
+}
+
+body {
+    background-color: var(--background);
+}
+
+h1 {
+    color: var(--text-primary);
+}

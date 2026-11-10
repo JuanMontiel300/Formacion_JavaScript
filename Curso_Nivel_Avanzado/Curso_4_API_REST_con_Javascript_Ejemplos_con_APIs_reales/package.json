@@ -1,0 +1,12 @@
+{
+  "name": "curso_4_api_rest_con_javascript_ejemplos_con_apis_reales",
+  "version": "1.0.0",
+  "description": "",
+  "license": "MIT",
+  "author": "JuanMontiel300",
+  "type": "commonjs",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
