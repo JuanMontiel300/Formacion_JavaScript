@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -9,6 +9,21 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        #trendingPreview .movie-card {
+            overflow: hidden;
+            border: 1px solid var(--border);
+            border-radius: 15px;
+            background: var(--surface);
+        }
+        
+        #trendingPreview .movie-img {
+            display: block;
+            width: 100%;
+            height: 190px;
+            object-fit: cover;
+        }
+    </style>
 </head>
 
 <body>
@@ -35,7 +50,7 @@
             </section>
 
             <!-- Search -->
-            <section class="search-section">
+            <section id="searchForm" class="search-section" role="search">
                 <div class="search-box">
                     <span class="search-icon">⌕</span>
                     <input type="search" placeholder="Busca películas, actores..." aria-label="Buscar películas o actores">
@@ -47,7 +62,7 @@
             </section>
 
             <!-- Featured Movie -->
-            <section class="featured-section">
+            <section id="movieDetail" class="featured-section">
 
                 <article class="featured-card">
 
@@ -82,10 +97,46 @@
             </section>
 
             <!-- Popular Movies -->
-            <section class="movie-section">
+            <section id="trendingPreview" class="movie-section">
 
                 <div class="section-header">
-                    <h2>Populares ahora</h2>
+                    <h2>Tendencias</h2>
+                    <a href="#">Ver todo ›</a>
+                </div>
+
+                <article class="movie-list trendingPreview-movieList" aria-label="Películas en tendencia">
+                    <!-- JavaScript agrega aquí las películas -->
+                </article>
+
+            </section>
+
+            <!-- Categories -->
+            <section id="categoriesPreview" class="recommendations-section">
+
+                <div class="section-header">
+                    <h2>Categorías</h2>
+                </div>
+
+                <div class="recommendation-list">
+
+                    <article class="recommendation-card">
+                        <div class="recommendation-poster recommendation-one">
+                            ◆
+                        </div>
+
+                    </article>
+
+
+
+                </div>
+
+            </section>
+
+            <!-- Add your own movie cards in this section -->
+            <section id="genericList" class="movie-section">
+
+                <div class="section-header">
+                    <h2>Películas similares</h2>
                     <a href="#">Ver todo ›</a>
                 </div>
 
@@ -94,73 +145,28 @@
                     <article class="movie-card">
                         <div class="movie-poster poster-one">
                             <button class="favorite-button" aria-label="Agregar a favoritos">♡</button>
-                            <span class="poster-rating">★ 8.7</span>
+                            <span class="poster-rating">★ 8.2</span>
                         </div>
-
-                        <h3>El último horizonte</h3>
+                        <h3>Memoria infinita</h3>
                         <p>2024 · Película</p>
                     </article>
 
                     <article class="movie-card">
                         <div class="movie-poster poster-two">
                             <button class="favorite-button" aria-label="Agregar a favoritos">♡</button>
-                            <span class="poster-rating">★ 8.4</span>
+                            <span class="poster-rating">★ 7.9</span>
                         </div>
-
-                        <h3>Noches de neón</h3>
+                        <h3>La ciudad oculta</h3>
                         <p>2023 · Película</p>
                     </article>
 
                     <article class="movie-card">
                         <div class="movie-poster poster-three">
                             <button class="favorite-button" aria-label="Agregar a favoritos">♡</button>
-                            <span class="poster-rating">★ 8.1</span>
+                            <span class="poster-rating">★ 8.0</span>
                         </div>
-
-                        <h3>Bajo el océano</h3>
-                        <p>2024 · Película</p>
-                    </article>
-
-                </div>
-
-            </section>
-
-            <!-- Recommendations -->
-            <section class="recommendations-section">
-
-                <div class="section-header">
-                    <h2>Recomendadas para ti</h2>
-                    <a href="#">Ver todo ›</a>
-                </div>
-
-                <div class="recommendation-list">
-
-                    <article class="recommendation-card">
-                        <div class="recommendation-poster recommendation-one">
-                            ▶
-                        </div>
-
-                        <div class="recommendation-info">
-                            <span class="match">98% para ti</span>
-                            <h3>Memoria infinita</h3>
-                            <p>Ciencia ficción · 2h 12m</p>
-                        </div>
-
-                        <button class="recommendation-favorite" aria-label="Agregar a favoritos">♡</button>
-                    </article>
-
-                    <article class="recommendation-card">
-                        <div class="recommendation-poster recommendation-two">
-                            ▶
-                        </div>
-
-                        <div class="recommendation-info">
-                            <span class="match">94% para ti</span>
-                            <h3>La ciudad oculta</h3>
-                            <p>Suspenso · 1h 48m</p>
-                        </div>
-
-                        <button class="recommendation-favorite" aria-label="Agregar a favoritos">♡</button>
+                        <h3>El último viaje</h3>
+                        <p>2022 · Película</p>
                     </article>
 
                 </div>
@@ -195,8 +201,11 @@
         </nav>
 
     </div>
-
-    <script src="js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="src/secrets.js"></script>
+    <script src="./src/nodes.js"></script>
+    <script src="src/main.js"></script>
+    <script src="./src/navigation.js"></script>
 
 </body>
 
